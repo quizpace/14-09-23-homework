@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Activity Information</title>
+  </head>
+  <body>
+    <h1>Activity Information</h1>
+
+    <div id="activityInfo">
+      <!-- Activity information will be displayed here -->
+    </div>
+
+    <script>
+      // Define an Activity class
+      class Activity {
+        constructor(activity, type, participants, price) {
+          this.activity = activity;
+          this.type = type;
+          this.participants = participants;
+          this.price = price;
+        }
+
+        // Setter for activity
+        set_activity(activity) {
+          this.activity = activity;
+        }
+
+        // Setter for type
+        set_type(type) {
+          this.type = type;
+        }
+
+        // Setter for participants
+        set_participants(participants) {
+          this.participants = participants;
+        }
+
+        // Setter for price
+        set_price(price) {
+          this.price = price;
+        }
+      }
+
+      // Fetch data from the specified URL
+      fetch("https://www.boredapi.com/api/activity")
+        .then((response) => response.json())
+        .then((data) => {
+          // Create a new Activity instance based on the JSON response
+          const activity = new Activity(
+            data.activity,
+            data.type,
+            data.participants,
+            data.price
+          );
+
+          // Display activity information in the HTML div
+          const activityInfoDiv = document.getElementById("activityInfo");
+          activityInfoDiv.innerHTML = `
+                <p>Activity: ${activity.activity}</p>
+                <p>Type: ${activity.type}</p>
+                <p>Participants: ${activity.participants}</p>
+                <p>Price: ${activity.price}</p>
+            `;
+        })
+        .catch((error) => {
+          console.error("An error occurred:", error);
+        });
+    </script>
+  </body>
+</html>

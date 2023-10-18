@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alien Info</title>
+  </head>
+  <body>
+    <h1>Alien Information</h1>
+
+    <script>
+      class Alien {
+        constructor(name, galaxy, planet, spaceShip) {
+          this.name = name;
+          this.galaxy = galaxy;
+          this.planet = planet;
+          this.spaceShip = spaceShip;
+        }
+      }
+
+      // Prompt the user to enter Alien information
+      const name = prompt("Enter Name:");
+      const galaxy = prompt("Enter Galaxy:");
+      const planet = prompt("Enter Planet:");
+      const spaceShip = prompt("Enter Your Spaceship Name:");
+
+      // Create a new Alien instance
+      const alienInfo = new Alien(name, galaxy, planet, spaceShip);
+
+      // Display Alien information in the console
+      console.log("Initial Alien's Information:");
+      console.log("Name:", alienInfo.name);
+      console.log("Galaxy:", alienInfo.galaxy);
+      console.log("Planet:", alienInfo.planet);
+      console.log("Spaceship Name:", alienInfo.spaceShip);
+
+      // Prompt the user to update Alien information
+      const updateName = prompt("Update Name:");
+      const updateGalaxy = prompt("Update Galaxy:");
+      const updatePlanet = prompt("Update Planet:");
+      const updateSpaceShip = prompt("Update Your Spaceship Name:");
+
+      // Update the Alien instance properties directly
+      alienInfo.name = updateName;
+      alienInfo.galaxy = updateGalaxy;
+      alienInfo.planet = updatePlanet;
+      alienInfo.spaceShip = updateSpaceShip;
+
+      // Display the updated Alien information in the console
+      console.log("Updated Alien's Information:");
+      console.log("Name:", alienInfo.name);
+      console.log("Galaxy:", alienInfo.galaxy);
+      console.log("Planet:", alienInfo.planet);
+      console.log("Spaceship Name:", alienInfo.spaceShip);
+    </script>
+  </body>
+</html>

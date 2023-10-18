@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person Info</title>
+  </head>
+  <body>
+    <h1>Person Information</h1>
+
+    <script>
+      class Person {
+        constructor(name, age, gender, address) {
+          this.name = name;
+          this.age = age;
+          this.gender = gender;
+          this.address = address;
+        }
+      }
+
+      // Prompt the user to enter person information
+      const name = prompt("Enter Name:");
+      const age = prompt("Enter Age:");
+      const gender = prompt("Enter Gender:");
+      const address = prompt("Enter Address:");
+
+      // Create a new Person instance
+      const personInfo = new Person(name, age, gender, address);
+
+      // Display person information in the console
+      console.log("Initial Person Information:");
+      console.log("Name:", personInfo.name);
+      console.log("Age:", personInfo.age);
+      console.log("Gender:", personInfo.gender);
+      console.log("Address:", personInfo.address);
+
+      // Prompt the user to update person information
+      const updatedName = prompt("Update Name:");
+      const updatedAge = prompt("Update Age:");
+      const updatedGender = prompt("Update Gender:");
+      const updatedAddress = prompt("Update Address:");
+
+      // Update the Person instance properties directly
+      personInfo.name = updatedName;
+      personInfo.age = updatedAge;
+      personInfo.gender = updatedGender;
+      personInfo.address = updatedAddress;
+
+      // Display the updated person information in the console
+      console.log("Updated Person Information:");
+      console.log("Name:", personInfo.name);
+      console.log("Age:", personInfo.age);
+      console.log("Gender:", personInfo.gender);
+      console.log("Address:", personInfo.address);
+    </script>
+  </body>
+</html>

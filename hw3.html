@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bank Account Info</title>
+  </head>
+  <body>
+    <h1>Bank Account Information</h1>
+
+    <script>
+      class BankAccount {
+        constructor(accountNumber, accountHolder, balance, accountType) {
+          this.accountNumber = accountNumber;
+          this.accountHolder = accountHolder;
+          this.balance = balance;
+          this.accountType = accountType;
+        }
+      }
+
+      // Prompt the user to enter BankAccount information
+      const accountNumber = prompt("Enter Account Number:");
+      const accountHolder = prompt("Enter Account Holder:");
+      const balance = prompt("Enter Balance:");
+      const accountType = prompt("Enter Account Type:");
+
+      // Create a new BankAccount instance
+      const BankAccountInfo = new BankAccount(
+        accountNumber,
+        accountHolder,
+        balance,
+        accountType
+      );
+
+      // Display BankAccount information in the console
+      console.log("Initial Bank Account Information:");
+      console.log("Account Number:", BankAccountInfo.accountNumber);
+      console.log("Account Holder:", BankAccountInfo.accountHolder);
+      console.log("Balance:", BankAccountInfo.balance);
+      console.log("Account Type:", BankAccountInfo.accountType);
+
+      // Prompt the user to update BankAccount information
+      const updatedaccountNumber = prompt("Update Account Number:");
+      const updatedaccountHolder = prompt("Update Account Holder:");
+      const updatedbalance = prompt("Update Balance:");
+      const updatedaccountType = prompt("Update Account Type:");
+
+      // Update the BankAccount instance properties directly
+      BankAccountInfo.accountNumber = updatedaccountNumber;
+      BankAccountInfo.accountHolder = updatedaccountHolder;
+      BankAccountInfo.balance = updatedbalance;
+      BankAccountInfo.accountType = updatedaccountType;
+
+      // Display the updated BankAccount information in the console
+      console.log("Updated Bank Account Information:");
+      console.log("Account Number:", BankAccountInfo.accountNumber);
+      console.log("Account Holder:", BankAccountInfo.accountHolder);
+      console.log("Balance:", BankAccountInfo.balance);
+      console.log("Account Type:", BankAccountInfo.accountType);
+    </script>
+  </body>
+</html>

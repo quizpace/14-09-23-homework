@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Information</title>
+  </head>
+  <body>
+    <h1>User Information</h1>
+
+    <div id="userInfo">
+      <!-- User information will be displayed here -->
+    </div>
+
+    <script>
+      // Define a User class with randomly selected fields
+      class User {
+        constructor(id, email, username, avatar) {
+          this.id = id;
+          this.email = email;
+          this.username = username;
+          this.avatar = avatar;
+        }
+
+        // Setter for id
+        set_id(id) {
+          this.id = id;
+        }
+
+        // Setter for email
+        set_email(email) {
+          this.email = email;
+        }
+
+        // Setter for username
+        set_username(username) {
+          this.username = username;
+        }
+
+        // Setter for avatar
+        set_avatar(avatar) {
+          this.avatar = avatar;
+        }
+      }
+
+      // Fetch data from the specified URL
+      fetch("https://random-data-api.com/api/users/random_user")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(JSON.stringify(data));
+
+          // Create a new User instance with randomly selected fields from the JSON response
+          const user = new User(
+            data.id,
+            data.email,
+            data.username,
+            data.avatar
+          );
+
+          // Display user information in the HTML div
+          const userInfoDiv = document.getElementById("userInfo");
+          userInfoDiv.innerHTML = `
+                <p>ID: ${user.id}</p>
+                <p>Email: ${user.email}</p>
+                <p>Username: ${user.username}</p>
+                <p>Avatar: <img src="${user.avatar}" alt="User Avatar"></p>
+            `;
+        })
+        .catch((error) => {
+          console.error("An error occurred:", error);
+        });
+    </script>
+  </body>
+</html>
